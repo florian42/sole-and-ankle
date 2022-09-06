@@ -15,14 +15,18 @@ const SuperHeader = () => {
       </MarketingMessage>
       <SearchInput />
       <HelpLink href="/help">Help</HelpLink>
-      <UnstyledButton>
+      <StyledButton>
         <Icon id="shopping-bag" strokeWidth={1} />
-      </UnstyledButton>
+      </StyledButton>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  padding: 12px;
   font-size: 0.875rem;
   color: ${COLORS.gray[300]};
   background-color: ${COLORS.gray[900]};
@@ -30,16 +34,20 @@ const Wrapper = styled.div`
 
 const MarketingMessage = styled.span`
   color: ${COLORS.white};
+  margin-right: auto;
 `;
 
 const HelpLink = styled.a`
   color: inherit;
   text-decoration: none;
   outline-offset: 2px;
-
   &:not(:focus-visible) {
     outline: none;
   }
 `;
+
+const StyledButton  = styled(UnstyledButton)`
+    margin-top: -2px;
+`
 
 export default SuperHeader;
